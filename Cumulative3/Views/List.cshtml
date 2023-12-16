@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<div id="containerlist">
+    <nav>
+        <a class="navlink" href="/Teacher/New">New</a>
+    </nav>
+    <h2>List</h2>
+    <form action="/Teacher/List" method="GET">
+        <input type="text" name="SearchKey" autocomplete="off" />
+        <input type="submit" value="Search" />
+    </form>
+    @foreach (var Teacher in Model)
+    {
+        <div class="listitem row">
+            <div class="col-md-12"><a href="/Author/Show/@Teacher.teacherid">@Teacher.teacherfname @Teacher.teacherlname</a></div>
+        </div>
+    }
+</div>    
